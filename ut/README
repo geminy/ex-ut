@@ -1,0 +1,72 @@
+unit test
+
+gcov/lcov
+
+test_obj: gcov.cpp
+
+a. compile and link with "-fprofile-arcs -ftest-coverage"
+$ g++ -fprofile-arcs -ftest-coverage -o gcovex gcov.cpp
+>>output: gcovex gcov.gcno
+
+b. run
+$ ./gcovex
+>>output: gcov.gcda
+
+c. use gcov for gcov.cpp
+$ gcov gcov.cpp
+>>output: *.gcov
+File 'gcov.cpp'
+Lines executed:100.00% of 4
+Creating 'gcov.cpp.gcov'
+
+File '/usr/include/c++/4.8/iostream'
+Lines executed:100.00% of 1
+Creating 'iostream.gcov'
+
+File '/usr/include/c++/4.8/bits/basic_ios.h'
+Lines executed:0.00% of 4
+Creating 'basic_ios.h.gcov'
+
+File '/usr/include/c++/4.8/ostream'
+No executable lines
+Removing 'ostream.gcov'
+
+File '/usr/include/c++/4.8/bits/locale_facets.h'
+Lines executed:0.00% of 5
+Creating 'locale_facets.h.gcov'
+
+File '/usr/include/c++/4.8/bits/ios_base.h'
+Lines executed:0.00% of 2
+Creating 'ios_base.h.gcov'
+
+File '/usr/include/c++/4.8/bits/char_traits.h'
+Lines executed:0.00% of 2
+Creating 'char_traits.h.gcov'
+>>
+
+d. collect data with lcov
+$ lcov --capture --directory . --output-file coverage.info
+>>output: create coverage.info and remove *.gcov
+Capturing coverage data from .
+Found gcov version: 4.8.4
+Scanning . for .gcda files ...
+Found 1 data files in .
+Processing gcov.gcda
+geninfo: WARNING: no data found for /usr/include/c++/4.8/ostream
+Finished .info-file creation
+>>
+
+e. generate html 
+$ genhtml coverage.info --output-directory out
+>>output: out directory of html report
+Processing file 4.8/iostream
+Processing file 4.8/bits/char_traits.h
+Processing file 4.8/bits/basic_ios.h
+Processing file 4.8/bits/locale_facets.h
+Processing file 4.8/bits/ios_base.h
+Writing directory view page.
+Overall coverage rate:
+  lines......: 27.8% (5 of 18 lines)
+  functions..: 42.9% (3 of 7 functions)
+  branches...: 25.0% (2 of 8 branches)
+>>

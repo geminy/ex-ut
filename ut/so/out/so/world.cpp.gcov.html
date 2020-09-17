@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - test.info - so/world.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">so</a> - world.cpp<span style="font-size: 80%;"> (source / <a href="world.cpp.func.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">test.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">52</td>
+            <td class="headerCovTableEntry">52</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2015-12-11</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntry">22</td>
+            <td class="headerCovTableEntry">24</td>
+            <td class="headerCovTableEntryHi">91.7 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">           Branch data     Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>                :            : #include &lt;stdio.h&gt;</a>
+<a name="2"><span class="lineNum">       2 </span>                :            : #include &quot;world.h&quot;</a>
+<span class="lineNum">       3 </span>                :            : 
+<span class="lineNum">       4 </span>                :<span class="lineCov">          1 : void world_foo()</span>
+<span class="lineNum">       5 </span>                :            : {
+<span class="lineNum">       6 </span>                :<span class="lineCov">          1 :         printf(&quot;%s\n&quot;, __func__);</span>
+<a name="7"><span class="lineNum">       7 </span>                :<span class="lineCov">          1 : }</span></a>
+<span class="lineNum">       8 </span>                :            : 
+<span class="lineNum">       9 </span>                :<span class="lineCov">          4 : void world_foo2(int i)</span>
+<span class="lineNum">      10 </span>                :            : {
+<span class="lineNum">      11 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          4 :         if (i &gt; 0) {</span>
+<span class="lineNum">      12 </span>                :<span class="lineCov">          2 :                 printf(&quot;%s pos\n&quot;, __func__);</span>
+<span class="lineNum">      13 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          2 :                 if (0 == i % 2) {</span>
+<span class="lineNum">      14 </span>                :<span class="lineCov">          1 :                         printf(&quot;%s even\n&quot;, __func__);</span>
+<span class="lineNum">      15 </span>                :            :                 }
+<span class="lineNum">      16 </span>                :            :                 else {
+<span class="lineNum">      17 </span>                :<span class="lineCov">          2 :                         printf(&quot;%s odd\n&quot;, __func__);</span>
+<span class="lineNum">      18 </span>                :            :                 }
+<span class="lineNum">      19 </span>                :            :         }
+<span class="lineNum">      20 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          2 :         else if (i &lt; 0) {</span>
+<span class="lineNum">      21 </span>                :<span class="lineCov">          1 :                 printf(&quot;%s neg\n&quot;, __func__);</span>
+<span class="lineNum">      22 </span>                :            :         }
+<span class="lineNum">      23 </span>                :            :         else {
+<span class="lineNum">      24 </span>                :<span class="lineCov">          1 :                 printf(&quot;%s zero\n&quot;, __func__);</span>
+<span class="lineNum">      25 </span>                :            :         }
+<a name="26"><span class="lineNum">      26 </span>                :<span class="lineCov">          4 : }</span></a>
+<span class="lineNum">      27 </span>                :            : 
+<span class="lineNum">      28 </span>                :<span class="lineCov">          1 : void world_foo3(int i)</span>
+<span class="lineNum">      29 </span>                :            : {
+<span class="lineNum">      30 </span>                :<span class="lineCov">          1 :         printf(&quot;%s\n&quot;, __func__);</span>
+<span class="lineNum">      31 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          6 :         for (int j = 0; j &lt; i; ++j) {</span>
+<span class="lineNum">      32 </span>                :<span class="lineCov">          5 :                 printf(&quot;%s %d\n&quot;, __func__, j);</span>
+<span class="lineNum">      33 </span>  [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchCov" title="Branch 3 was taken 1 time"> + </span>]:<span class="lineCov">          5 :                 switch (j) {</span>
+<span class="lineNum">      34 </span>                :            :                         case 0:
+<span class="lineNum">      35 </span>                :<span class="lineCov">          1 :                                 printf(&quot;%s case 0\n&quot;, __func__);</span>
+<span class="lineNum">      36 </span>                :<span class="lineCov">          1 :                                 break;</span>
+<span class="lineNum">      37 </span>                :            :                         case 1:
+<span class="lineNum">      38 </span>                :<span class="lineCov">          1 :                                 printf(&quot;%s case 1\n&quot;, __func__);</span>
+<span class="lineNum">      39 </span>                :<span class="lineCov">          1 :                                 break;</span>
+<span class="lineNum">      40 </span>                :            :                         case 2:
+<span class="lineNum">      41 </span>                :            :                         case 3:
+<span class="lineNum">      42 </span>                :<span class="lineCov">          2 :                                 printf(&quot;%s case %d\n&quot;, __func__, j);</span>
+<span class="lineNum">      43 </span>                :<span class="lineCov">          2 :                                 break;</span>
+<span class="lineNum">      44 </span>                :            :                         default:
+<span class="lineNum">      45 </span>                :<span class="lineCov">          1 :                                 printf(&quot;%s default ...\n&quot;, __func__);</span>
+<span class="lineNum">      46 </span>                :<span class="lineCov">          1 :                                 break;</span>
+<span class="lineNum">      47 </span>                :            :                 }
+<span class="lineNum">      48 </span>                :            :         }
+<a name="49"><span class="lineNum">      49 </span>                :<span class="lineCov">          1 : }</span></a>
+<span class="lineNum">      50 </span>                :            : 
+<span class="lineNum">      51 </span>                :<span class="lineCov">          3 : void world_foo4(bool a, bool b)</span>
+<span class="lineNum">      52 </span>                :            : {
+<span class="lineNum">      53 </span>                :<span class="lineCov">          3 :         printf(&quot;%s %d %d\n&quot;, __func__, a, b);</span>
+<span class="lineNum">      54 </span>[<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>][<span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchCov" title="Branch 3 was taken 1 time"> + </span>]:<span class="lineCov">          3 :         if (a &amp;&amp; b) {</span>
+<span class="lineNum">      55 </span>                :<span class="lineCov">          1 :                 printf(&quot;%s true true\n&quot;, __func__);</span>
+<span class="lineNum">      56 </span>                :            :         }
+<span class="lineNum">      57 </span>                :            : 
+<span class="lineNum">      58 </span>                :<span class="lineCov">          3 : }</span>
+<span class="lineNum">      59 </span>                :            : 
+<span class="lineNum">      60 </span>                :            : 
+<a name="61"><span class="lineNum">      61 </span>                :            : WorldClass* WorldClass::s_WorldClass = NULL;</a>
+<span class="lineNum">      62 </span>                :            : 
+<span class="lineNum">      63 </span>                :<span class="lineCov">          2 : WorldClass* WorldClass::FakeInstance()</span>
+<span class="lineNum">      64 </span>                :            : {
+<span class="lineNum">      65 </span>                :<span class="lineCov">          2 :         printf(&quot;%s %p\n&quot;, __func__, s_WorldClass);</span>
+<span class="lineNum">      66 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          2 :         if (!s_WorldClass) {</span>
+<span class="lineNum">      67 </span>        [<span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          1 :                 s_WorldClass = new WorldClass;</span>
+<span class="lineNum">      68 </span>                :            :         }
+<span class="lineNum">      69 </span>                :<span class="lineCov">          2 :         return s_WorldClass;</span>
+<a name="70"><span class="lineNum">      70 </span>                :            : }</a>
+<span class="lineNum">      71 </span>                :            : 
+<span class="lineNum">      72 </span>                :<span class="lineCov">          2 : void WorldClass::Destroy()</span>
+<span class="lineNum">      73 </span>                :            : {
+<span class="lineNum">      74 </span>                :<span class="lineCov">          2 :         printf(&quot;%s %p\n&quot;, __func__, s_WorldClass);</span>
+<span class="lineNum">      75 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          2 :         if (s_WorldClass) {</span>
+<span class="lineNum">      76 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :                 delete s_WorldClass;</span>
+<span class="lineNum">      77 </span>                :<span class="lineCov">          1 :                 s_WorldClass = NULL;</span>
+<span class="lineNum">      78 </span>                :            :         }
+<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">          2 : }</span></a>
+<span class="lineNum">      80 </span>                :            : 
+<span class="lineNum">      81 </span>                :<span class="lineCov">          2 : WorldClass::WorldClass()</span>
+<span class="lineNum">      82 </span>                :            : {
+<span class="lineNum">      83 </span>                :<span class="lineCov">          2 :         printf(&quot;%s\n&quot;, __func__);</span>
+<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">          2 : }</span></a>
+<span class="lineNum">      85 </span>                :            : 
+<span class="lineNum">      86 </span>                :<span class="lineCov">          2 : WorldClass::~WorldClass()</span>
+<span class="lineNum">      87 </span>                :            : {
+<span class="lineNum">      88 </span>                :<span class="lineCov">          2 :         printf(&quot;%s\n&quot;, __func__);</span>
+<a name="89"><span class="lineNum">      89 </span>                :<span class="lineCov">          2 : }</span></a>
+<span class="lineNum">      90 </span>                :            : 
+<span class="lineNum">      91 </span>                :<span class="lineCov">          1 : void WorldClass::WorldFoo()</span>
+<span class="lineNum">      92 </span>                :            : {
+<span class="lineNum">      93 </span>                :<span class="lineCov">          1 :         printf(&quot;%s\n&quot;, __func__);</span>
+<span class="lineNum">      94 </span>                :<span class="lineCov">          1 : }</span>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.10</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
